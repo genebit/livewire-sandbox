@@ -16,4 +16,3 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', Counter::class)->name('home');
-Route::get('/home', [HomeController::class, 'index'])->name('home-page');
