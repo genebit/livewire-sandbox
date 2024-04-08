@@ -5,7 +5,7 @@ namespace App\Http\Livewire;
 use Barryvdh\Debugbar\Facades\Debugbar;
 use Livewire\Component;
 
-class Counter extends Component
+class Form extends Component
 {
     public $count, $country;
     public $counterLogs;
@@ -38,7 +38,7 @@ class Counter extends Component
         // log the count with count and timestamp
         array_push($this->counterLogs, $data);
 
-        $this->emit('reload');
+        $this->emit('countUpdated', $data);
     }
 
     public function decrement()
@@ -54,12 +54,12 @@ class Counter extends Component
         // log the count with count and timestamp
         array_push($this->counterLogs, $data);
 
-        $this->emit('reload');
+        $this->emit('countUpdated', $data);
     }
 
     public function render()
     {
-        return view('counter')
+        return view('pages.counter.components.form')
             ->extends('layouts.app');
     }
 }

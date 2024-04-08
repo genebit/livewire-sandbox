@@ -1,7 +1,8 @@
 <?php
 
+use App\Http\Controllers\CounterController;
 use App\Http\Controllers\HomeController;
-use App\Http\Livewire\Counter;
+use App\Http\Livewire\Form;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +16,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', Counter::class)->name('home');
+Route::get('/', [CounterController::class, 'index'])->name('counter');
